@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using BrightonMine.Data;
+using BrightonMine.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BrightonMine;
 
@@ -23,6 +25,8 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddSingleton<WeatherForecastService>();
+
+		builder.Services.AddDbContext<BaseContext>();
 
 		return builder.Build();
 	}
